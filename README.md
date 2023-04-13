@@ -3,10 +3,15 @@ This project presents network automation methods with a focus on Cisco Network &
 
 # Prerequest
   1- Ansible must be installed. Below link can help for installing ansible.
+  
   https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-ansible-on-ubuntu-20-04
+  
   2- Required Ansible Galaxy must be installed too. with below command:
+  
       comming soon ...
+      
   3- My Ansible Tree Structure is: 
+  
       ├── ansible.cfg
       ├── ansible.log
       ├── inventory
@@ -19,3 +24,5 @@ This project presents network automation methods with a focus on Cisco Network &
       ├── playbooks
       │   ├── backup_config.yml
       └── roles
+
+  3- 
