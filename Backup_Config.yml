@@ -4,13 +4,20 @@
 # @create date 2023-03-15
 # @desc [Automation - Backup Cisco Router or Switch]
 ---
+# In this playbook:
+#     - First access to all hostnames in hosts file
+#     - Second get current date
+#     - Thired save running config
+# Atention that all backup saved in /etc/ansible/backups folder, for that this folder must be created by user.
+# 
 - name: Backup running config and save it on timestamp folder
+  # In this case using all hosts. you can specify one or multiple groups.
   hosts: all
   gather_facts: false
 
   tasks:
 
-    - name: Accespt ansible net hostname
+    - name: Access ansible net hostname
       ios_facts:
         gather_subset: all
 
@@ -26,7 +33,6 @@
       ios_config:
        backup: yes
        backup_options:
-         #ansible_host = getting device IP, ansible_net_hostname = getting device hostname
          filename: "{{ ansible_net_hostname }}_{{ ansible_host }}.txt"
          #Please change /home/hawar/Desktop to your direcotry
          #Every time create a new directory under named date and time
